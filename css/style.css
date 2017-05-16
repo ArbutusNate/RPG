@@ -4,15 +4,16 @@ body {
 }
 h2 {
 	color:#228cba;
+	text-align: center;
 }
 
 .leftframe {
 	background-color: rgb(6, 23, 39);
 	border: 4px solid #145081;
 	border-radius: 15px;
+	padding-bottom: 10px;
 }
 .leftrow {
-	margin-top: 140px;
 	max-height: 33%;
 }
 button {
@@ -23,15 +24,38 @@ button {
 	color: #228cba;
 	margin: 0px 3px;
 	width: 24%;
-	height: 55px;
+	padding: 3px;
+}
+button:focus {
+	color: orange;
+}
+button:hover {
+	color: orange;
+}
+.smallimage {
+	margin: 2px;
 }
 
 .hero-select:hover{
 	border-color: #0f4d43;
 }
-.enemy-select {
+.inCombat {
 	background-color: #50272c;
 	border-color: #9a2712;
+}
+.enemy-select {
+	border-color: #4f5414;
+	background-color: #181b06;
+}
+.hero {
+	border-color: #148120;
+	background-color: #050a02;
+}
+.victoryimg {
+	border: 3px solid #145081;
+	border-radius: 5px;
+	margin: 3%;
+	max-width: 94%;
 }
 @font-face {
 	font-family: old_republic;
