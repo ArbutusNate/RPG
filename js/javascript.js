@@ -1,20 +1,10 @@
 $(document).ready(function() {
-	reset();
-	// Variables
-	// var chars = [
-	// 	{name : "Bastila", 		hp : 100, ba : 6, dmg : 6, cap : 30, charid : 0},
-	// 	{name : "Malak", 		hp : 120, ba : 8, dmg : 8, cap : 25, charid : 1},
-	// 	{name : "Revan", 		hp : 110, ba : 9, dmg : 9, cap : 10, charid : 2},
-	// 	{name : "Carth", 		hp : 115, ba : 7, dmg : 7, cap : 20, charid : 3},
-	// 	// {name : "Jarjar",		hp : 90,  ba : 8, dmg : 6, cap : 25, charid : 4},
-	// ];
 	var chars;
 	var wincount;
 	var selection = "";
 	var enemy = "";
 	var heroid;
 	var enemyid;
-	// var wincount = chars.length - 1;
 	// Page Set-Up
 	function reset() {
 		chars = [
@@ -28,7 +18,6 @@ $(document).ready(function() {
 			var charBtn = $("<button>");
 			charBtn
 				.addClass("hero-select")
-				// .prepend("<img src =./assets/" + chars[i].name + ".png </img>")
 				.html(chars[i].name + "<img class = smallimage src =assets/" + chars[i].name + ".png>" + "<br> <span class = hp" + chars[i].name + ">"  + chars[i].hp + "</span>")
 				.attr("charname", chars[i].name)
 				.attr("charid", chars[i].charid);
@@ -39,18 +28,6 @@ $(document).ready(function() {
 		$(".enemyzone").hide();
 		$(".combatzone").hide();	
 	};
-	// $(function(reset));
-	// for (var i = 0; i < chars.length; i++) {
-	// 	var charBtn = $("<button>");
-	// 	charBtn
-	// 		.addClass("hero-select")
-	// 		// .prepend("<img src =./assets/" + chars[i].name + ".png </img>")
-	// 		.html(chars[i].name + "<img class = smallimage src =assets/" + chars[i].name + ".png>" + "<br> <span class = hp" + chars[i].name + ">"  + chars[i].hp + "</span>")
-	// 		.attr("charname", chars[i].name)
-	// 		.attr("charid", chars[i].charid);
-	// 		console.log(charBtn, chars[i].name);
-	// 		$(".herozone").append(charBtn);
-	// };
 	$(document).on('click', 'button.hero-select', function(){ // Select Hero
 		selection = $(this).attr("charname"); // Selection = Character Name.
 		heroid = $(this).attr("charid");
@@ -100,76 +77,15 @@ $(document).ready(function() {
 			$(".inCombat").hide(150);								// Animation for hiding inCombat
 			if(wincount <= 0){
 				$(".message").text("You win!")
-				$(".enemyzone").prepend("<img class = 'victoryimg' src=./assets/" + chars[heroid].name + "victory.png>")
+				$(".enemyzone").append("<img class = 'victoryimg' src=./assets/" + chars[heroid].name + "victory.png>")
+				$(".herozone").hide(300);
 			}
 		};
 	});
-	$(document).on('click', 'victoryimg', function(){
-		console.log(working);
-		
+	$(document).on('click', 'img.victoryimg', function(){
+		console.log("working");
+		$(".herozone").show(200);
+		$(".hero").remove();
+		reset();
 	});
 });
-
-
-
-	// var luke = {
-	// 	hp : 100,
-	// 	ap : 6,
-	// 	cap : 15,
-	// };
-	// var vader = {
-	// 	hp : 120,
-	// 	ap : 8,
-	// 	cap : 25,
-	// };
-	// var ratts = {
-	// 	hp : 110,
-	// 	ap : 9,
-	// 	cap : 10,
-	// };
-	// var jarjar = {
-	// 	hp : 115,
-	// 	ap : 7,
-	// 	cap : 20,
-	// };
-
-	// Hero and Enemy Selection
-	// $(".hero-select").on("click", function(){ // On the click of a hero-select button...
-		// if (hselected === true && eselected === true){ // FIGHT!
-		// 	//Subtract HP from both characters
-		// 	chars[enemyid].hp -= chars[heroid].dmg;
-		// 	chars[heroid].hp -= chars[enemyid].dmg;
-		// 	$("hp" + .chars[enemyid].name).text(chars[enemyid.hp]);
-		// 	console.log("-----------------COMBAT---------------");
-		// 	console.log("Hero ID: " + heroid + ". Enemy ID: " + heroid);
-		// 	console.log("Enemy takes " + chars[heroid].dmg + ". New HP = " + chars[enemyid].hp);
-		// 	console.log("You take " + chars[enemyid].dmg + ". New HP = " + chars[heroid].hp);
-		// 	//Add attack damage to selection
-		// };		
-		// if (hselected === true && eselected === false){ // select an enemy
-		// 	enemy = $(this).attr("charname");
-		// 	enemyid = $(this).attr("charid");
-		// 	$(this)
-		// 		.removeClass("hero-select")
-		// 		.addClass("inCombat");
-		// 	console.log(selection + " vs. " + enemy);
-		// 	eselected = true;
-		// 	$(".inCombat").appendTo(".combatzone");
-
-		// };
-		// if (hselected === false && eselected === false){ // select a hero
-		// 	selection = $(this).attr("charname"); // Selection = Character Name.
-		// 	heroid = $(this).attr("charid");
-		// 	$(this)
-		// 		.removeClass("hero-select")
-		// 		// .off("click");
-		// 	hselected = true;
-		// 	console.log(selection);
-		// 	console.log("hselected: " + hselected);
-		// 	console.log(heroid + " Hero ID")
-		// 	$(".hero-select")
-		// 		.appendTo(".enemyzone")
-		// 		.addClass("enemy-select");
-
-		// };
-	// });
