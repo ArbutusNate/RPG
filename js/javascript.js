@@ -7,7 +7,7 @@ var heroid = 0;
 var enemyid = 0;
 function reset() { // Reset Function
 	chars = [
-		{name : "Bastila", 		hp : 114, ba : 6, dmg : 6, cap : 9, charid : 0},
+		{name : "Bastila", 		hp : 114, ba : 6, dmg : 6, cap : 9,  charid : 0},
 		{name : "Malak", 		hp : 95,  ba : 8, dmg : 8, cap : 10, charid : 1},
 		{name : "Revan", 		hp : 89,  ba : 9, dmg : 9, cap : 11, charid : 2},
 		{name : "Carth", 		hp : 87,  ba : 7, dmg : 7, cap : 12, charid : 3},
