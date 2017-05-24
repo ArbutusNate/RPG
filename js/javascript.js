@@ -21,7 +21,7 @@ function reset() { // Reset Function
 			.attr("charid", chars[i].charid);
 			console.log(charBtn, chars[i].name);
 			$(".herozone").append(charBtn);
-		};
+	};
 	wincount = chars.length - 1;
 	$(".message").text("Select your Opponent");
 	$(".enemyzone").hide();
