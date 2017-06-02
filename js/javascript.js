@@ -16,7 +16,7 @@ function reset() { // Reset Function
 		var charBtn = $("<button>");
 		charBtn
 			.addClass("hero-select")
-			.html(chars[i].name + '<img class="smallimage" src="assets/' + chars[i].name + '.png">' + '<br><span class="hp' + chars[i].name + '">'  + chars[i].hp + '</span>')
+			.html(chars[i].name + '<img class="smallimage" src="assets/' + chars[i].name + '1.png">' + '<br><span class="hp' + chars[i].name + '">'  + chars[i].hp + '</span>')
 			.attr("charname", chars[i].name)
 			.attr("charid", chars[i].charid);
 			console.log(charBtn, chars[i].name);
