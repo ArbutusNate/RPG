@@ -10,7 +10,7 @@ function reset() { // Reset Function
 		{name : "Bastila", 		hp : 114, ba : 6, dmg : 6, cap : 9,  charid : 0},
 		{name : "Malak", 		hp : 95,  ba : 8, dmg : 8, cap : 10, charid : 1},
 		{name : "Revan", 		hp : 89,  ba : 9, dmg : 9, cap : 11, charid : 2},
-		{name : "Carth", 		hp : 87,  ba : 7, dmg : 7, cap : 12, charid : 3},
+		{name : "Carth", 		hp : 80,  ba : 7, dmg : 7, cap : 12, charid : 3},
 	];
 	for (var i = 0; i < chars.length; i++) {
 		var charBtn = $("<button>");
@@ -92,7 +92,7 @@ function combat() { // Combat
 		$(".inCombat").hide(150);								// Animation for hiding inCombat
 		if(wincount <= 0){
 			$(".message").text("You win!")
-			$(".enemyzone").append('<img class="victoryimg" src="./assets/' + chars[heroid].name + 'victory.png">')
+			$(".enemyzone").append('<img class="victoryimg" src="./assets/' + chars[heroid].name + 'victory1.png">')
 			if(chars[heroid].hp <= 0){
 				chars[heroid].hp = 1
 			};
